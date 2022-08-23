@@ -3,34 +3,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <title>Photo Ninja materialize</title>
+  <style>
+    header {
+      background: url('img/man.jpg') center/cover no-repeat;
+      height: 1000px;
+    }
+    @media screen and (max-width: 768px) {
+      header {
+        height: 500px;
+      }
+    }
+    .section {
+      padding: 2rem 0;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <!-- navbar -->
-    <nav>
+    <nav class="transparent">
       <div class="nav-wrapper">
         <div class="container">
-            <a href="#" class="brand-logo">Photo ninja</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="#">Photos</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a></li>
-            </ul>
-            <!-- <button class="btn right"></button>   -->
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <a href="#" class="brand-logo">Photo Ninja</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-square-facebook"></i></a></li>
+            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-twitter"></i></a></li>
+          </ul>
         </div>
       </div>
     </nav>
 
-
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="#">Photos</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
   </header>
 
 
@@ -49,8 +67,11 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://kit.fontawesome.com/d0d2d8a261.js" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function(){
+
+        $('.sidenav').sidenav();
 
     });
   </script>
