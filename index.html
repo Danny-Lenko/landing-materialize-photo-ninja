@@ -25,7 +25,12 @@
     .tabs .indicator {
       background-color: #1a237e;
     }
-
+    #email-container,
+    #message-container,
+    #date-container {
+      padding: 0;
+      margin: 0.5rem 0;
+    }
     @media screen and (max-width: 768px) {
       header {
         height: 500px;
@@ -47,129 +52,189 @@
 
   <header>
     <!-- navbar -->
-    <nav class="transparent">
-      <div class="nav-wrapper">
-        <div class="container">
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          <a href="#" class="brand-logo">Photo Ninja</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#">Photos</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-instagram"></i></a></li>
-            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-square-facebook"></i></a></li>
-            <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-twitter"></i></a></li>
-          </ul>
-        </div>
+    <nav class="transparent nav-wrapper">
+      <div class="container">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" class="brand-logo">Photo Ninja</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#photo-grid">Photos</a></li>
+          <li><a href="#services-tabs">Services</a></li>
+          <li><a href="#contact-form">Contact</a></li>
+          <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-square-facebook"></i></a></li>
+          <li><a class="btn-floating btn-small waves-effect waves-light indigo darken-4"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
       </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="#">Photos</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#photo-grid">Photos</a></li>
+      <li><a href="#services-tabs">Services</a></li>
+      <li><a href="#contact-form">Contact</a></li>
     </ul>
   </header>
 
-  <!-- photo / grid -->
-  <section class="section container" id="photo-grid">
-    <div class="row">
-      <div class="col m12 l4">
-        <img src="img/portrait.jpg" alt="portrait" class="responsive-img">
-      </div>
-      <div class="col m12 l6 offset-l1">
-        <h2>Portraits</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col m12 l4 push-l8">
-        <img src="img/city.jpg" alt="city" class="responsive-img">
-      </div>
-      <div class="col m12 l6 pull-l3 right-align">
-        <h2>Cityscapes</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col m12 l4">
-        <img src="img/nature.jpg" alt="nature" class="responsive-img">
-      </div>
-      <div class="col m12 l6 offset-l1">
-        <h2>Nature</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- parallax -->
-  <div class="parallax-container">
-    <div class="parallax"><img src="img/street.jpg" alt="city" class="responsive-img"></div>
-  </div>
-
-  <!-- services / tabs -->
-  <section class="section container" id="services-tabs">
-    <div class="row">
-
-      <div class="col m12 l4">
-        <h2>What I do..</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
-      </div>
-  
-      <div class="col m12 l6 push-l2">
-        <div class="row">
-          <div class="col s12 l12">
-            <ul class="tabs">
-              <li class="tab col s3 l6"><a class="indigo-text text-darken-4 transparent" href="#photography">Photography</a></li>
-              <li class="tab col s3 l6"><a class="active indigo-text text-darken-4 transparent" href="#editing">Editing</a></li>
-            </ul>
-          </div>
-          <div id="photography" class="col s12 l12">
-            <h5>Photography</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-            <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
-          </div>
-          <div id="editing" class="col s12 l12">
-            <h5>Editing</h5>
-            <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
-          </div>
+  <main>
+    <section class="section container scrollspy" id="photo-grid">
+      <div class="row">
+        <div class="col m12 l4">
+          <img src="img/portrait.jpg" alt="portrait" class="responsive-img">
+        </div>
+        <div class="col m12 l6 offset-l1">
+          <h2>Portraits</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
         </div>
       </div>
-
-    </div>
-  </section>
   
-  <!-- parallax -->
-  <div class="parallax-container">
-    <div class="parallax"><img src="img/stars.jpg" alt="stars" class="responsive-img"></div>
-  </div>
-
-  <!-- contact form -->
-  <section class="section">
-    <div class="container">
-
+      <div class="row">
+        <div class="col m12 l4 push-l8">
+          <img src="img/city.jpg" alt="city" class="responsive-img">
+        </div>
+        <div class="col m12 l6 pull-l3 right-align">
+          <h2>Cityscapes</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col m12 l4">
+          <img src="img/nature.jpg" alt="nature" class="responsive-img">
+        </div>
+        <div class="col m12 l6 offset-l1">
+          <h2>Nature</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- parallax -->
+    <div class="parallax-container">
+      <div class="parallax"><img src="img/street.jpg" alt="city" class="responsive-img"></div>
+    </div>
+  
+    <!-- services / tabs -->
+    <section class="section container scrollspy" id="services-tabs">
+      <div class="row">
+  
+        <div class="col m12 l4">
+          <h2>What I do..</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+          <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        </div>
+    
+        <div class="col m12 l6 push-l2">
+          <div class="row">
+            <div class="col s12 l12">
+              <ul class="tabs">
+                <li class="tab col s3 l6"><a class="indigo-text text-darken-4 transparent" href="#photography">Photography</a></li>
+                <li class="tab col s3 l6"><a class="active indigo-text text-darken-4 transparent" href="#editing">Editing</a></li>
+              </ul>
+            </div>
+            <div id="photography" class="col s12 l12">
+              <h5>Photography</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+              <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+            </div>
+            <div id="editing" class="col s12 l12">
+              <h5>Editing</h5>
+              <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </section>
+    
+    <!-- parallax -->
+    <div class="parallax-container">
+      <div class="parallax"><img src="img/stars.jpg" alt="stars" class="responsive-img"></div>
+    </div>
+  
+    <!-- contact form -->
+    <section class="section scrollspy container" id="contact-form">
       <div class="row">
         <div class="col m12 l5">
-          <h2>Get in touch</h2>
+          <h2>Get in Touch</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
           <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
           <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
         </div>
 
-        <div class="col m12 l5">
-          
-        </div>
+        <form class="col m12 l5 push-l2">
+          <div class="input-field col s12" id="email-container">
+            <i class="material-icons prefix">email</i>
+            <input id="email" type="email" class="validate">
+            <label for="email">Your Email</label>
+          </div>
+
+          <div class="input-field col s12" id="message-container">
+            <i class="material-icons prefix">message</i>
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Your Message</label>
+          </div>
+
+          <div class="input-field col s12" id="date-container">
+            <i class="material-icons prefix">date_range</i>
+            <input id="datePicker" type="text" class="datepicker">
+            <label for="datePicker">Pick a date you need me for..</label>
+          </div>
+
+          <p>Services required:</p>
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>Photography</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox" />
+              <span>Photo Editing</span>
+            </label>
+          </p>
+
+          <div class="center-align">
+            <button class="btn waves-effect waves-light offset-l4" type="submit" name="action">Submit
+              <!-- <i class="material-icons right">send</i> -->
+            </button>
+          </div>
+        </form>
 
       </div>
-    </div>
-  </section>
+    </section> 
+  </main>
+  <!-- photo / grid -->
 
   <!-- footer -->
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Me</h5>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Linked In</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">
+      © 2022 Photo Ninja
+      <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
+      </div>
+    </div>
+  </footer>
+
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -181,6 +246,8 @@
         $('.sidenav').sidenav();
         $('.parallax').parallax();
         $('.tabs').tabs();
+        $('.datepicker').datepicker();
+        $('.scrollspy').scrollSpy();
 
     });
   </script>
